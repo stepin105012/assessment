@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+function myFunction() {
+    var Laptop=['HP','Sony'];
+    var Mobile=['Iphone','Nokia'];
+    var Tv=['SonyTv','Sharp'];
+    var printThis='<ul>';
+    var x = document.getElementById("mySelect").value;
+    //document.getElementById("demo").innerHTML = "You selected: " + x;
+    if(x==0)
+    {
+        Laptop.forEach(element => {
+            printThis += "<li>"+element+"</li>";
+        });
+    }
+    else if(x==1)
+    {
+        Mobile.forEach(element => {
+            printThis += "<li>"+element+"</li>";
+        });
+    }
+    else if(x==2)
+    {
+        Tv.forEach(element => {
+            printThis += "<li>"+element+"</li>";
+        });
+    }
+    document.getElementById("demo").innerHTML = printThis;
+}
+
+    </script>
+</head>
+<body>
+    <select id="mySelect" onchange="myFunction()">
+        <option >--select--
+        <option value="0">Laptop
+        </option>
+        <option value="1">Mobile
+        <option value="2">Tv
+      </select>
+      
+      <p>Details:</p>
+      
+      <div id="demo"></div>
+</body>
+</html>
